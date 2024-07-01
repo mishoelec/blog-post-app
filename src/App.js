@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { BrowserRouter as Route, Routes } from "react-router-dom"; // Correct import statement
+import { BrowserRouter as Route, Routes } from "react-router-dom";
 
 // Import your components
 import BlogPosts from "./pages/posts";
-import LoginForm from "./components/auth/auth"; // Assuming this is your login form component
+import LoginForm from "./components/auth/auth";
 import SearchedBlogs from "./pages/SearchedBlogs";
 
-// Assuming your user data
+// Import user data
 import { users } from "./data/user/data";
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
   const onSubmit = (data) => {
     if (authenticateUser(data.email, data.password)) {
       setIsLoggedIn(true);
+      console.log("correct");
     } else {
       setLoginError("Incorrect email or password");
       setIsLoggedIn(false);
@@ -33,7 +34,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* Routes */}
       <Routes>
         {!isLoggedIn && (
           <Route
