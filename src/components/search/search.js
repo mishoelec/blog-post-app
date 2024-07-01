@@ -3,14 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const [searchKeyword, setSearchKeyword] = useState("");
-  const [searchUrl, setSearchUrl] = useState("");
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    setSearchUrl(
-      `https://newsapi.org/v2/everything?q=${searchKeyword}&apiKey=4ead05860d20444492effffb16b31310`
-    );
-
     navigate("/searchedBlogs", { state: { key: searchKeyword } });
   };
 

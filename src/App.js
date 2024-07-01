@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Correct import statement
+import { BrowserRouter as Route, Routes } from "react-router-dom"; // Correct import statement
 
 // Import your components
 import BlogPosts from "./pages/posts";
