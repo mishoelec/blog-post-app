@@ -8,7 +8,7 @@ const SearchedBlogs = () => {
   const searchKeyword = location.state.key || {};
 
   const { data, error, status } = useFetch(
-    `https://newsapi.org/v2/everything?q=${searchKeyword}&apiKey=4ead05860d20444492effffb16b31310`
+    `https://gnews.io/api/v4/search?q=${searchKeyword}&lang=en&country=us&max=10&apikey=2468c478f388a37ede6b403c493c6024`
   );
 
   if (status === "loading") {
@@ -57,7 +57,7 @@ const SearchedBlogs = () => {
               className="bg-white w-full shadow rounded-lg overflow-hidden"
             >
               <img
-                src={article.urlToImage}
+                src={article.image}
                 className="object-cover h-52 w-full"
                 alt=""
               />
