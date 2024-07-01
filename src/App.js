@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 // Import your components
 import BlogPosts from "./pages/posts";
@@ -33,20 +33,22 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Routes>
-        {!isLoggedIn && (
-          <Route
-            path="/"
-            element={
-              <LoginForm onSubmit={onSubmit} errorMessage={loginError} />
-            }
-          />
-        )}
-        {isLoggedIn && <Route path="/" element={<BlogPosts />} />}
-        <Route path="/searchedBlogs" element={<SearchedBlogs />} />
-      </Routes>
-    </div>
+    <>
+      <div className="App">
+        <Routes>
+          {!isLoggedIn && (
+            <Route
+              path="/"
+              element={
+                <LoginForm onSubmit={onSubmit} errorMessage={loginError} />
+              }
+            />
+          )}
+          <Route path="/" element={<BlogPosts />} />
+          <Route path="/searchedBlogs" element={<SearchedBlogs />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
